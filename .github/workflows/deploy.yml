@@ -1,0 +1,34 @@
+name: Deploy Pipeline
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Explorer
+        run: npm run deploy:explorer
+
+      - name: Build Dashboard
+        run: npm run deploy:dashboard
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: explorer-dashboard
+          path: build/
