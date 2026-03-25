@@ -1,0 +1,39 @@
+cat > ~/tips-ecosystem/package.json << 'EOF'
+{
+  "name": "tips-ecosystem",
+  "version": "1.0.0",
+  "description": "Tips Ecosystem L1 - Decentralized Tipping Blockchain",
+  "main": "index.js",
+  "scripts": {
+    "compile": "npx hardhat compile",
+    "test": "npx hardhat test",
+    "test:coverage": "npx hardhat coverage",
+    "node": "npx hardhat node",
+    "deploy:localhost": "npx hardhat run scripts/deploy-direct.js --network localhost",
+    "deploy:testnet": "npx hardhat run scripts/deploy-direct.js --network sepolia",
+    "deploy:mainnet": "npx hardhat run scripts/deploy-direct.js --network mainnet",
+    "verify": "npx hardhat run scripts/verify-contracts.js --network",
+    "clean": "npx hardhat clean",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "keywords": [
+    "blockchain",
+    "ethereum",
+    "tips",
+    "cryptocurrency",
+    "defi"
+  ],
+  "author": "TheArchitect",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "hardhat": "^2.22.6"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.9.6",
+    "dotenv": "^16.4.5",
+    "ethers": "^6.11.1"
+  }
+}
+EOF
