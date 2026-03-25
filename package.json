@@ -14,7 +14,12 @@
     "verify": "npx hardhat run scripts/verify-contracts.js --network",
     "clean": "npx hardhat clean",
     "lint": "eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "prepare": "husky install",
+    "lint-staged": "lint-staged",
+    "ci:build": "npm run compile && npm run test",
+    "deploy:explorer": "node scripts/deploy-explorer.js",
+    "deploy:dashboard": "node scripts/deploy-dashboard.js"
   },
   "keywords": [
     "blockchain",
@@ -27,11 +32,22 @@
   "license": "MIT",
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^4.0.0",
-    "hardhat": "^2.22.6"
+    "hardhat": "^2.22.6",
+    "eslint": "^9.0.0",
+    "prettier": "^3.2.5",
+    "lint-staged": "^15.2.0",
+    "husky": "^9.0.0",
+    "solhint": "^3.6.0",
+    "hardhat-gas-reporter": "^1.0.10",
+    "hardhat-contract-sizer": "^2.0.0"
   },
   "dependencies": {
     "@openzeppelin/contracts": "^4.9.6",
     "dotenv": "^16.4.5",
     "ethers": "^6.11.1"
+  },
+  "lint-staged": {
+    "*.js": ["eslint --fix", "prettier --write"],
+    "*.sol": ["prettier --write"]
   }
 }
