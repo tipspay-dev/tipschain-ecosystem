@@ -1,0 +1,34 @@
+cat > ~/tips-ecosystem/.gitignore << 'EOF'
+# Dependencies
+node_modules/
+
+# Hardhat
+cache/
+artifacts/
+
+# Environment
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Test coverage
+coverage/
+coverage.json
+
+# Temporary
+tmp/
+temp/
+EOF
