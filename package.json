@@ -2,6 +2,7 @@
   "name": "tips-ecosystem",
   "version": "1.0.0",
   "description": "Tips Ecosystem L1 - Decentralized Tipping Blockchain with Next.js frontend",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
