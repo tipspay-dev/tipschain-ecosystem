@@ -6,6 +6,11 @@ node_modules/
 cache/
 artifacts/
 
+# Build artifacts
+.next/
+dist/
+build/
+
 # Environment
 .env
 .env.local
