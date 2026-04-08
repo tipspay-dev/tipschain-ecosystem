@@ -5,7 +5,7 @@
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import styles from "../../styles/explorer.module.css";
+import styles from "../../../styles/explorer.module.css";
 
 export default function TransactionDetails() {
   const router = useRouter();

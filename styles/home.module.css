@@ -1,0 +1,552 @@
+.page {
+  position: relative;
+  overflow: clip;
+}
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  padding: 1.25rem 1.25rem 3rem;
+}
+
+.heroGlow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 25% 18%, rgba(102, 226, 255, 0.18), transparent 0 24%),
+    radial-gradient(circle at 70% 22%, rgba(244, 184, 96, 0.16), transparent 0 18%),
+    radial-gradient(circle at 60% 70%, rgba(58, 95, 160, 0.35), transparent 0 30%);
+  filter: blur(12px);
+  pointer-events: none;
+}
+
+.gridLines {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(151, 187, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(151, 187, 255, 0.08) 1px, transparent 1px);
+  background-size: 88px 88px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.55), transparent 85%);
+  pointer-events: none;
+}
+
+.nav {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 0 1rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-family: var(--font-display), "Segoe UI", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.brandMark {
+  width: 0.95rem;
+  height: 0.95rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-warm));
+  box-shadow: 0 0 24px rgba(102, 226, 255, 0.55);
+}
+
+.navLinks {
+  display: inline-flex;
+  gap: 1.25rem;
+  color: var(--muted);
+}
+
+.navLinks a {
+  position: relative;
+  font-size: 0.95rem;
+}
+
+.navLinks a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.35rem;
+  width: 100%;
+  height: 1px;
+  background: rgba(102, 226, 255, 0.4);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 180ms ease;
+}
+
+.navLinks a:hover::after {
+  transform: scaleX(1);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+  align-items: flex-end;
+  gap: 3rem;
+  width: min(1240px, 100%);
+  margin: 0 auto;
+  min-height: calc(100svh - 5rem);
+}
+
+.copyColumn {
+  padding: 5rem 0 2rem;
+}
+
+.kicker,
+.sectionHeading span,
+.launchCopy span,
+.surfaceRow div span,
+.operatorRow span,
+.statusStrip span {
+  display: inline-block;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.title {
+  margin: 1rem 0 1.25rem;
+  max-width: 10ch;
+  font-family: var(--font-display), "Segoe UI", sans-serif;
+  font-size: clamp(3.8rem, 9vw, 8rem);
+  line-height: 0.96;
+  letter-spacing: -0.05em;
+}
+
+.title span {
+  color: var(--accent);
+}
+
+.summary {
+  max-width: 34rem;
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+.ctaRow,
+.launchActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.primaryCta,
+.secondaryCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.4rem;
+  padding: 0.95rem 1.45rem;
+  border-radius: 999px;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease,
+    color 180ms ease;
+}
+
+.primaryCta {
+  background: linear-gradient(135deg, var(--accent), #98f0ff);
+  color: #05111c;
+  font-weight: 700;
+  box-shadow: 0 18px 40px rgba(102, 226, 255, 0.24);
+}
+
+.secondaryCta {
+  border: 1px solid var(--surface-strong);
+  color: var(--text);
+  background: rgba(7, 17, 31, 0.24);
+}
+
+.primaryCta:hover,
+.secondaryCta:hover,
+.surfaceRow:hover {
+  transform: translateY(-2px);
+}
+
+.heroMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.heroMeta span {
+  padding: 0.75rem 0.95rem;
+  border: 1px solid rgba(151, 187, 255, 0.14);
+  border-radius: 999px;
+  background: rgba(8, 18, 33, 0.44);
+  color: #dce8fa;
+}
+
+.visualColumn {
+  display: grid;
+  gap: 1.5rem;
+  align-self: center;
+}
+
+.orbitShell {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  width: min(100%, 36rem);
+  margin-left: auto;
+  border-radius: 50%;
+  border: 1px solid rgba(151, 187, 255, 0.14);
+  background:
+    radial-gradient(circle at 50% 50%, rgba(102, 226, 255, 0.12), rgba(7, 17, 31, 0) 45%),
+    rgba(8, 18, 33, 0.45);
+  box-shadow: inset 0 0 60px rgba(102, 226, 255, 0.06), var(--shadow);
+  overflow: hidden;
+}
+
+.orbitRing,
+.orbitRingInner {
+  position: absolute;
+  border-radius: 50%;
+  inset: 10%;
+  border: 1px solid rgba(151, 187, 255, 0.12);
+  animation: rotateSlow 18s linear infinite;
+}
+
+.orbitRingInner {
+  inset: 23%;
+  animation-duration: 12s;
+  animation-direction: reverse;
+}
+
+.orbitCore {
+  position: absolute;
+  inset: 34%;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(180deg, rgba(8, 18, 33, 0.96), rgba(13, 26, 45, 0.95));
+  border: 1px solid rgba(151, 187, 255, 0.2);
+  text-align: center;
+}
+
+.orbitCore strong {
+  font-family: var(--font-display), "Segoe UI", sans-serif;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  letter-spacing: -0.05em;
+}
+
+.orbitCore span {
+  color: var(--muted);
+  font-size: 0.96rem;
+}
+
+.signal {
+  position: absolute;
+  width: 0.95rem;
+  height: 0.95rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent-warm));
+  box-shadow: 0 0 16px rgba(102, 226, 255, 0.9);
+}
+
+.signalA {
+  top: 18%;
+  left: 22%;
+  animation: drift 7s ease-in-out infinite;
+}
+
+.signalB {
+  top: 30%;
+  right: 18%;
+  animation: drift 5s ease-in-out infinite;
+}
+
+.signalC {
+  bottom: 20%;
+  left: 29%;
+  animation: drift 6s ease-in-out infinite reverse;
+}
+
+.statusStrip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  width: min(100%, 44rem);
+  margin-left: auto;
+  border-top: 1px solid var(--surface-line);
+  border-bottom: 1px solid var(--surface-line);
+  background: rgba(8, 18, 33, 0.4);
+  backdrop-filter: blur(20px);
+}
+
+.statusStrip div {
+  padding: 1rem 1.15rem;
+  border-left: 1px solid var(--surface-line);
+}
+
+.statusStrip div:first-child {
+  border-left: 0;
+}
+
+.statusStrip strong {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.main {
+  width: min(1240px, calc(100% - 2.5rem));
+  margin: 0 auto 6rem;
+}
+
+.sectionIntro {
+  margin: 1rem 0 4rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--surface-line);
+}
+
+.sectionIntro p,
+.statement p,
+.launchCopy p,
+.feature p,
+.surfaceRow p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.surfaceSection,
+.networkSection,
+.detailSection,
+.launchSection {
+  padding: 2.2rem 0;
+  border-top: 1px solid var(--surface-line);
+}
+
+.sectionHeading {
+  display: grid;
+  gap: 0.6rem;
+  margin-bottom: 2rem;
+}
+
+.sectionHeading h2,
+.launchCopy h2 {
+  margin: 0;
+  max-width: 13ch;
+  font-family: var(--font-display), "Segoe UI", sans-serif;
+  font-size: clamp(2.2rem, 4vw, 4rem);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.surfaceList {
+  display: grid;
+  border-top: 1px solid var(--surface-line);
+}
+
+.surfaceRow {
+  display: grid;
+  grid-template-columns: minmax(180px, 240px) minmax(0, 1fr) auto;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1.35rem 0;
+  border-bottom: 1px solid var(--surface-line);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease;
+}
+
+.surfaceRow strong {
+  display: block;
+  margin-top: 0.45rem;
+  font-size: 1.55rem;
+  font-family: var(--font-display), "Segoe UI", sans-serif;
+}
+
+.surfaceArrow {
+  color: var(--accent-warm);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.feature {
+  padding-right: 1rem;
+}
+
+.feature h3 {
+  margin: 0 0 0.8rem;
+  font-size: 1.3rem;
+  font-family: var(--font-display), "Segoe UI", sans-serif;
+  letter-spacing: -0.03em;
+}
+
+.detailSection {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.operatorPanel {
+  padding: 1.5rem;
+  border: 1px solid var(--surface-line);
+  background: rgba(8, 18, 33, 0.44);
+  box-shadow: var(--shadow);
+}
+
+.operatorRows {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--surface-line);
+}
+
+.operatorRow {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--surface-line);
+}
+
+.operatorRow strong {
+  font-family: var(--font-display), "Segoe UI", sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: -0.03em;
+}
+
+.statement {
+  display: grid;
+  align-content: center;
+  min-height: 100%;
+  padding: 2rem 0;
+}
+
+.statement p {
+  max-width: 34rem;
+  font-size: clamp(1.25rem, 2vw, 1.8rem);
+  line-height: 1.45;
+  color: #e7eef9;
+}
+
+.launchSection {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  padding-bottom: 1rem;
+}
+
+.launchCopy {
+  max-width: 44rem;
+}
+
+@keyframes rotateSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0.45rem, -0.8rem, 0);
+  }
+}
+
+@media (max-width: 980px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .heroContent,
+  .detailSection,
+  .launchSection,
+  .featureGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .visualColumn,
+  .statusStrip,
+  .orbitShell {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .copyColumn {
+    padding-top: 3rem;
+  }
+
+  .surfaceRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .hero {
+    padding-inline: 1rem;
+  }
+
+  .main {
+    width: min(100% - 2rem, 1240px);
+  }
+
+  .navLinks {
+    flex-wrap: wrap;
+    gap: 0.9rem 1.2rem;
+  }
+
+  .title {
+    font-size: clamp(3rem, 18vw, 4.7rem);
+  }
+
+  .statusStrip {
+    grid-template-columns: 1fr;
+  }
+
+  .statusStrip div {
+    border-left: 0;
+    border-top: 1px solid var(--surface-line);
+  }
+
+  .statusStrip div:first-child {
+    border-top: 0;
+  }
+
+  .sectionHeading h2,
+  .launchCopy h2 {
+    max-width: 100%;
+  }
+
+  .operatorPanel {
+    padding: 1.2rem;
+  }
+}

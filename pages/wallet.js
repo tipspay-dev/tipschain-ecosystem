@@ -2,6 +2,7 @@
  * Wallet Page - Web3 Wallet Interface
  */
 
+import Link from "next/link";
 import { useState } from "react";
 import styles from "../styles/wallet.module.css";
 
@@ -26,7 +27,6 @@ export default function Wallet() {
       const address = accounts[0];
       setUserAddress(address);
 
-      // Fetch balance
       const res = await fetch(`/api/wallet/balance?address=${address}`);
       const data = await res.json();
       setBalance(data.balance);
@@ -77,12 +77,12 @@ export default function Wallet() {
         <div className={styles.card}>
           <h2>Quick Actions</h2>
           <div className={styles.actions}>
-            <a href="/explorer/address/[address]" className={styles.button}>
+            <Link href={`/explorer/address/${userAddress}`} className={styles.button}>
               View on Explorer
-            </a>
-            <a href="/dex" className={styles.button}>
+            </Link>
+            <Link href="/dex" className={styles.button}>
               Go to DEX
-            </a>
+            </Link>
           </div>
         </div>
       )}

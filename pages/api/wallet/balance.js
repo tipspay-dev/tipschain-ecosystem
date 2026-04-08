@@ -3,7 +3,7 @@
  * GET /api/wallet/balance?address=0x...
  */
 
-import walletService from "../../services/walletService";
+import walletService from "../../../services/walletService";
 
 export default async function handler(req, res) {
   if (req.method !== "GET") {

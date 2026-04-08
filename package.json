@@ -37,27 +37,37 @@
   "author": "TheArchitect",
   "license": "MIT",
   "dependencies": {
-    "next": "^14.2.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "@openzeppelin/contracts": "^4.9.6",
     "dotenv": "^16.4.5",
-    "ethers": "^6.11.1"
+    "ethers": "^6.11.1",
+    "next": "^14.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^14.2.35",
     "hardhat": "^2.22.6",
-    "eslint": "^9.0.0",
-    "prettier": "^3.2.5",
-    "lint-staged": "^15.2.0",
-    "husky": "^9.0.0",
-    "solhint": "^3.6.0",
+    "hardhat-contract-sizer": "^2.0.0",
     "hardhat-gas-reporter": "^1.0.10",
-    "hardhat-contract-sizer": "^2.0.0"
+    "husky": "^9.0.0",
+    "lint-staged": "^15.2.0",
+    "prettier": "^3.2.5",
+    "solhint": "^3.6.0"
   },
   "lint-staged": {
-    "*.js": ["eslint --fix", "prettier --write"],
-    "*.ts": ["eslint --fix", "prettier --write"],
-    "*.sol": ["prettier --write", "solhint --fix"]
+    "*.js": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.sol": [
+      "prettier --write",
+      "solhint --fix"
+    ]
   }
 }
