@@ -1,15 +1,9 @@
-cat > ~/tips-ecosystem/.gitignore << 'EOF'
 # Dependencies
 node_modules/
 
 # Hardhat
 cache/
 artifacts/
-
-# Build artifacts
-.next/
-dist/
-build/
 
 # Environment
 .env
@@ -36,4 +30,12 @@ coverage.json
 # Temporary
 tmp/
 temp/
-EOF
+
+# Next.js and packaged outputs
+.next/
+dist/
+apps/*/node_modules/
+apps/*/dist/
+rail1-pack41/cache/
+rail1-pack41/out/
+rail1-pack41/broadcast/

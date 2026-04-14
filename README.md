@@ -1,26 +1,24 @@
-cat > ~/tips-ecosystem/README.md << 'EOF'
-# Tips Ecosystem L1
+# Tipschain Ecosystem
 
-Decentralized Tipping Blockchain - A complete ecosystem for content creator tips and rewards.
+Recovered workspace for the Tipschain production stack.
 
-## 🚀 Features
+## Included surfaces
+- `apps/wallet-web/` for the wallet web app
+- `apps/dex-web/` for the DEX web app
+- `extension/tipswallet-extension/` for the browser extension source snapshot
+- `rail1-pack41/` for the Pack 4.1 rail contracts and services
 
-- **TipCoin (TPC)**: Native ERC20 token (1 Billion supply)
-- **USDTC**: Stablecoin for USD-pegged tips
-- **TrustedForwarder**: Gasless meta-transaction support
-- **TipsNameService**: Human-readable address names
-
-## 📦 Installation
-
+## Root release commands
 ```bash
-# Clone repository
-git clone https://github.com/TheArchitect/tips-ecosystem.git
-cd tips-ecosystem
+npm run wallet:lint
+npm run wallet:build
+npm run dex:lint
+npm run dex:build
+npm run release:4.1
+```
 
-# Install dependencies
-npm install
-
-# Copy environment file
-cp .env.example .env
-
-# Edit .env with your private key and RPC URLs
+## Notes
+- The Git base was restored from `tipspay-dev/tipschain-ecosystem`.
+- Wallet source was recovered from a newer local `TipsWallet` checkout.
+- DEX source was recovered from `tipspay-dev/TipspayDEX`.
+- Extension and `rail1-pack41` were recovered from local backup/download snapshots.

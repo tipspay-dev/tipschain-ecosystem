@@ -1,0 +1,5 @@
+{
+  "name": "Tipschain DEX",
+  "description": "A high-performance Uniswap-style DEX for Tipschain with V1, V2, and V3 liquidity pools. Features swap, liquidity management, and real-time blockchain integration.",
+  "requestFramePermissions": []
+}

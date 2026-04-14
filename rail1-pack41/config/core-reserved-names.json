@@ -1,0 +1,21 @@
+{
+  "owner_profile": "thearchitect",
+  "names": [
+    "root.tips",
+    "murat.tips",
+    "muratgunel.tips",
+    "tipspay.tips",
+    "admin.tips",
+    "administrator.tips",
+    "security.tips",
+    "tpc.tips",
+    "tipschain.tips",
+    "wtpc.tips",
+    "usdtc.tips"
+  ],
+  "notes": [
+    "Reserve these names first on-chain.",
+    "Do not embed interactive account passwords into contracts, repos, deploy scripts, or chat artifacts.",
+    "Bind any root/admin password only through the app auth layer backed by a secrets manager."
+  ]
+}
