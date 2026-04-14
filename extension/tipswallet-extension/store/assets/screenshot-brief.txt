@@ -1,0 +1,6 @@
+Capture these store screenshots after running the built extension:
+1. onboarding create/import screen
+2. main asset dashboard with balances
+3. signature approval modal
+4. transaction approval modal
+5. swap tab launching Tipspay DEX

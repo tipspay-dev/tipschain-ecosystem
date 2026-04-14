@@ -1,0 +1,6 @@
+{
+  "walletUrl": "https://wallet.tipspay.org",
+  "dexUrl": "https://dex.tipspay.org",
+  "chainId": 19251925,
+  "rpcUrl": "https://rpc.tipschain.org"
+}

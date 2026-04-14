@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Tipspay Wallet Extension",
+  "short_name": "Tipspay Wallet",
+  "version": "4.1.0",
+  "description": "Production wallet and DEX surface for the Tipschain ecosystem.",
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Tipspay Wallet"
+  },
+  "permissions": ["storage", "activeTab"],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}

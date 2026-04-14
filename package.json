@@ -1,8 +1,7 @@
 {
   "name": "tips-ecosystem",
-  "version": "1.0.0",
-  "description": "Tips Ecosystem L1 - Decentralized Tipping Blockchain with Next.js frontend",
-  "type": "module",
+  "version": "4.1.0",
+  "description": "TipsWallet Rail 1 Pack 4.1 workspace with wallet web app, browser extension, and production release tooling",
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
@@ -22,8 +21,21 @@
     "prepare": "husky install",
     "lint-staged": "lint-staged",
     "ci:build": "npm run compile && npm run test",
-    "deploy:explorer": "node scripts/deploy-explorer.js",
-    "deploy:dashboard": "node scripts/deploy-dashboard.js"
+    "wallet:install": "npm --prefix ./apps/wallet-web ci",
+    "wallet:lint": "npm --prefix ./apps/wallet-web run lint",
+    "wallet:build": "npm --prefix ./apps/wallet-web run build",
+    "dex:install": "npm --prefix ./apps/dex-web ci",
+    "dex:lint": "npm --prefix ./apps/dex-web run lint",
+    "dex:build": "npm --prefix ./apps/dex-web run build",
+    "rail1:build": "cd rail1-pack41 && forge build",
+    "rail1:test": "cd rail1-pack41 && forge test -vvv",
+    "rail1:test:fork": "cd rail1-pack41 && forge test --match-path \"test/fork/*\" -vvv",
+    "release:dex-web": "pwsh -File scripts/package-dex-web.ps1",
+    "release:wallet-web": "pwsh -File scripts/package-wallet-web.ps1",
+    "release:extension": "pwsh -File scripts/package-extension.ps1",
+    "release:pack41": "pwsh -File scripts/package-pack41.ps1",
+    "release:manifest": "node scripts/write-release-manifest.js",
+    "release:4.1": "npm run wallet:build && npm run dex:build && npm run release:wallet-web && npm run release:dex-web && npm run release:extension && npm run release:pack41 && npm run release:manifest"
   },
   "keywords": [
     "blockchain",
@@ -46,7 +58,7 @@
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^4.0.0",
-    "eslint": "^8.57.1",
+    "eslint": "^8.57.0",
     "eslint-config-next": "^14.2.35",
     "hardhat": "^2.22.6",
     "hardhat-contract-sizer": "^2.0.0",

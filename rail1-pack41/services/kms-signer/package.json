@@ -1,0 +1,18 @@
+{
+  "name": "@tipswallet/kms-signer",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsx src/quoteSigner.ts"
+  },
+  "dependencies": {
+    "@aws-sdk/client-kms": "^3.650.0",
+    "ethers": "^6.13.2"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.1",
+    "typescript": "^5.5.4"
+  }
+}
