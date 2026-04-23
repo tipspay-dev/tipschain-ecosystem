@@ -4,7 +4,7 @@ Decentralized Tipping Blockchain - A complete ecosystem for content creator tips
 
 ## 🚀 Features
 
-- **TipCoin (TPC)**: Native ERC20 token (1 Billion supply)
+- **TipsCoin (TPC)**: Native ERC20 token (1 Billion supply)
 - **USDTC**: Stablecoin for USD-pegged tips
 - **TrustedForwarder**: Gasless meta-transaction support
 - **TipsNameService**: Human-readable address names
