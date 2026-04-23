@@ -1,5 +1,4 @@
-cat > ~/tips-ecosystem/README.md << 'EOF'
-# Tips Ecosystem L1
+# Tipschain Ecosystem L1
 
 Decentralized Tipping Blockchain - A complete ecosystem for content creator tips and rewards.
 
